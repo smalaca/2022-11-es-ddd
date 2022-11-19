@@ -14,14 +14,15 @@
 
         <guava.version>31.1-jre</guava.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <h2.version>2.1.210</h2.version>
+        <lombok.version>1.18.24</lombok.version>
+        <h2.version>2.1.214</h2.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
-        <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <assertj-core.version>3.22.0</assertj-core.version>
-        <mockito-junit-jupiter.version>4.4.0</mockito-junit-jupiter.version>
-        <lombok.version>1.18.22</lombok.version>
+        <junit-jupiter.version>5.9.0</junit-jupiter.version>
+        <assertj-core.version>3.23.1</assertj-core.version>
+        <mockito-junit-jupiter.version>4.8.0</mockito-junit-jupiter.version>
+        <jbehave-core.version>4.8.3</jbehave-core.version>
     </properties>
 
     <parent>
@@ -97,6 +98,13 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito-junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>${jbehave-core.version}</version>
             <scope>test</scope>
         </dependency>
 

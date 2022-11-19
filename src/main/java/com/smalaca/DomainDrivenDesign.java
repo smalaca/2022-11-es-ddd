@@ -1,7 +1,7 @@
 package com.smalaca;
 
 public class DomainDrivenDesign {
-    boolean doesItHelp() {
+    public boolean doesItHelp() {
         return true;
     }
 }
