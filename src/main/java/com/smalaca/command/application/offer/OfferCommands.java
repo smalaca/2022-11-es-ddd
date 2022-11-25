@@ -1,4 +1,4 @@
-package com.smalaca.command.application.cart;
+package com.smalaca.command.application.offer;
 
 import com.smalaca.command.domain.cart.NotEnoughProductsFoundException;
 import com.smalaca.command.domain.productcatalogue.ProductsCatalogueRepository;
@@ -6,10 +6,10 @@ import com.smalaca.command.domain.productcatalogue.ProductsCatalogueRepository;
 import java.util.Map;
 import java.util.UUID;
 
-public class CartCommands {
+public class OfferCommands {
     private final ProductsCatalogueRepository productsCatalogueRepository;
 
-    public CartCommands(ProductsCatalogueRepository productsCatalogueRepository) {
+    public OfferCommands(ProductsCatalogueRepository productsCatalogueRepository) {
         this.productsCatalogueRepository = productsCatalogueRepository;
     }
 

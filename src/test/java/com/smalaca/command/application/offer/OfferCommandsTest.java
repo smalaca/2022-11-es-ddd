@@ -1,4 +1,4 @@
-package com.smalaca.command.application.cart;
+package com.smalaca.command.application.offer;
 
 import com.google.common.collect.ImmutableMap;
 import com.smalaca.command.domain.cart.NotEnoughProductsFoundException;
@@ -19,19 +19,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
-class CartCommandsTest {
+class OfferCommandsTest {
     private static final UUID PRODUCT_ID_ONE = UUID.randomUUID();
 
     private final ProductsCatalogueRepository productsCatalogueRepository = mock(ProductsCatalogueRepository.class);
     private final OfferRepository offerRepository = mock(OfferRepository.class);
-    private final CartCommands cartCommands = new CartCommands(productsCatalogueRepository);
+    private final OfferCommands offerCommands = new OfferCommands(productsCatalogueRepository);
 
     @Test
     void shouldRecognizeNotEnoughProductsAvailable() {
         givenAmountOfProduct(PRODUCT_ID_ONE, 12);
         Map<UUID, Integer> products = ImmutableMap.of(PRODUCT_ID_ONE, 13);
 
-        Executable actual = () -> cartCommands.buyProducts(products);
+        Executable actual = () -> offerCommands.buyProducts(products);
 
         assertThrows(NotEnoughProductsFoundException.class, actual);
         thenOfferNotCreated();
@@ -46,7 +46,7 @@ class CartCommandsTest {
         givenAmountOfProduct(PRODUCT_ID_ONE, 14);
         Map<UUID, Integer> products = ImmutableMap.of(PRODUCT_ID_ONE, 13);
 
-        cartCommands.buyProducts(products);
+        offerCommands.buyProducts(products);
 
         thenOfferCreated();
     }
