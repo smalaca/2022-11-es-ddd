@@ -19,7 +19,7 @@ public class OfferFactory {
             throw new NotEnoughProductsFoundException();
         }
 
-        return new Offer();
+        return new Offer(products);
     }
 
     private boolean notEnoughAmountFor(Map<UUID, Integer> products) {
