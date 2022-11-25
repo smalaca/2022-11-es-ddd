@@ -10,4 +10,8 @@ public class ProductCatalogue {
     public void add(UUID productId, int amount) {
         products.put(productId, amount);
     }
+
+    public boolean hasEnough(UUID productId, Integer amount) {
+        return products.get(productId) < amount;
+    }
 }

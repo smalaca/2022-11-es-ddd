@@ -1,7 +1,7 @@
 package com.smalaca.command.application.offer;
 
 import com.google.common.collect.ImmutableMap;
-import com.smalaca.command.domain.cart.NotEnoughProductsFoundException;
+import com.smalaca.command.domain.productcatalogue.NotEnoughProductsFoundException;
 import com.smalaca.command.domain.offer.Offer;
 import com.smalaca.command.domain.offer.OfferRepository;
 import com.smalaca.command.domain.productcatalogue.ProductCatalogue;
@@ -24,7 +24,8 @@ class OfferCommandsTest {
 
     private final ProductsCatalogueRepository productsCatalogueRepository = mock(ProductsCatalogueRepository.class);
     private final OfferRepository offerRepository = mock(OfferRepository.class);
-    private final OfferCommands offerCommands = new OfferCommands(productsCatalogueRepository);
+    private final OfferCommands offerCommands = new OfferCommands(
+            offerRepository, productsCatalogueRepository);
 
     @Test
     void shouldRecognizeNotEnoughProductsAvailable() {
